@@ -699,6 +699,70 @@ html {
     font-style: italic;
 }
 
+/* Animation Classes - Apply to all elements */
+.section,
+.section-title,
+.section-title-large,
+.subsection-title,
+.card-title,
+.qa-title,
+.footer-title,
+.content-text,
+.section-description,
+.image-wrapper,
+.flex-image,
+.flex-image img,
+.image-col,
+.card,
+.qa-card,
+.footer-card,
+.content-list,
+.card-list,
+.qa-list,
+.footer-list,
+.content-list li,
+.card-list li,
+.qa-list li,
+.footer-list li,
+.flex-content,
+.text-center,
+.image-row,
+.grid-2,
+.card-subsection,
+.subsection,
+.flipbook-container,
+.footer-grid,
+.footer-card,
+.commitment-boxes,
+.info-list,
+.qa-input-group,
+p,
+ul,
+h3,
+h4 {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.hero {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.hero-title,
+.hero-subtitle {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Animate-in state */
+.animate-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -762,6 +826,20 @@ html {
         opacity: 1;
         transform: scale(1);
     }
+}
+
+/* Hero animation on load */
+.hero.animate-in .hero-title {
+    animation: fadeInUp 0.8s ease-out 0.3s forwards;
+}
+
+.hero.animate-in .hero-subtitle {
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
+}
+
+.hero.animate-in .hero-btn {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.9s forwards;
 }
 
 /* Responsive Design */

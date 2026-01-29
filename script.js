@@ -1,36 +1,97 @@
-// Scroll Animation Observer
+// Scroll Animation Observer - Enhanced with repeat animation
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -80px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('animate-in');
+        } else {
+            // Remove class when out of view to enable re-animation
+            entry.target.classList.remove('animate-in');
         }
     });
 }, observerOptions);
 
-// Observe all sections
+// Initialize animations on page load
 document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('.section, .hero');
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(40px)';
-        section.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-        observer.observe(section);
+    // Animate hero immediately
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        setTimeout(() => {
+            hero.classList.add('animate-in');
+        }, 100);
+    }
+
+    // Observe ALL elements that should animate
+    const animatedElements = document.querySelectorAll(`
+        .section,
+        .section-title,
+        .section-title-large,
+        .subsection-title,
+        .card-title,
+        .qa-title,
+        .footer-title,
+        .content-text,
+        .section-description,
+        .image-wrapper,
+        .flex-image,
+        .flex-image img,
+        .image-col,
+        .card,
+        .qa-card,
+        .footer-card,
+        .content-list,
+        .card-list,
+        .qa-list,
+        .footer-list,
+        .flex-content,
+        .text-center,
+        .image-row,
+        .grid-2,
+        .subsection,
+        .flipbook-container,
+        .footer-grid,
+        .footer-card,
+        .commitment-boxes,
+        .info-list,
+        .qa-input-group,
+        .hero-subtitle,
+        .hero-title,
+        p,
+        ul,
+        h3,
+        h4
+    `);
+    
+    animatedElements.forEach(element => {
+        observer.observe(element);
     });
 
-    // Animate hero on load
-    setTimeout(() => {
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.opacity = '1';
-            hero.style.transform = 'translateY(0)';
-        }
-    }, 100);
+    // Animate list items with stagger effect - repeatable
+    const lists = document.querySelectorAll('.content-list, .card-list, .qa-list, .footer-list');
+    lists.forEach(list => {
+        const listObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const items = entry.target.querySelectorAll('li');
+                if (entry.isIntersecting) {
+                    items.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('animate-in');
+                        }, index * 80);
+                    });
+                } else {
+                    // Remove animation when out of view
+                    items.forEach(item => {
+                        item.classList.remove('animate-in');
+                    });
+                }
+            });
+        }, { threshold: 0.1 });
+        listObserver.observe(list);
+    });
 });
 
 // Smooth scroll for anchor links
@@ -146,62 +207,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Parallax effect for hero section
+// Parallax effect for hero section (subtle)
 window.addEventListener('scroll', () => {
     const hero = document.querySelector('.hero');
-    if (hero) {
+    if (hero && window.innerWidth > 768) {
         const scrolled = window.pageYOffset;
-        const rate = scrolled * 0.5;
+        const rate = scrolled * 0.3;
         hero.style.transform = `translateY(${rate}px)`;
     }
-});
-
-// Add fade-in animation to list items
-document.addEventListener('DOMContentLoaded', () => {
-    const listObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const items = entry.target.querySelectorAll('li');
-                items.forEach((item, index) => {
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateX(0)';
-                    }, index * 100);
-                });
-            }
-        });
-    }, { threshold: 0.2 });
-    
-    const lists = document.querySelectorAll('.content-list, .card-list, .qa-list');
-    lists.forEach(list => {
-        const items = list.querySelectorAll('li');
-        items.forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateX(-20px)';
-            item.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
-        });
-        listObserver.observe(list);
-    });
-});
-
-// Add animation to section titles
-document.addEventListener('DOMContentLoaded', () => {
-    const titleObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateX(0)';
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    const titles = document.querySelectorAll('.section-title, .subsection-title, .card-title');
-    titles.forEach(title => {
-        title.style.opacity = '0';
-        title.style.transform = 'translateX(-30px)';
-        title.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-        titleObserver.observe(title);
-    });
 });
 
 // Console message
