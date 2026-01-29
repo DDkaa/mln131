@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo Placeholder Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #5c4033;
+            text-align: center;
+        }
+        .info {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #d4af37;
+        }
+        .image-list {
+            list-style: none;
+            padding: 0;
+        }
+        .image-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 3px solid #d4af37;
+        }
+        .image-item h3 {
+            margin: 0 0 10px 0;
+            color: #5c4033;
+        }
+        .image-item p {
+            margin: 5px 0;
+            color: #666;
+        }
+        a.download-btn {
+            display: inline-block;
+            background: #d4af37;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        a.download-btn:hover {
+            background: #c4a033;
+        }
+        .suggestion {
+            background: #d1ecf1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #0c5460;
+        }
+        .suggestion h3 {
+            margin-top: 0;
+            color: #0c5460;
+        }
+        .suggestion ul {
+            margin: 10px 0;
+        }
+        .suggestion li {
+            margin: 5px 0;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📸 Hướng dẫn tạo hình ảnh cho website</h1>
+        
+        <div class="info">
+            <strong>⚠️ Lưu ý:</strong> Website cần 7 hình ảnh trong thư mục <code>images/</code> để hiển thị đầy đủ nội dung.
+        </div>
+
+        <h2>🖼️ Danh sách hình ảnh cần thiết:</h2>
+        
+        <ul class="image-list">
+            <li class="image-item">
+                <h3>1.jpg - Hình nền Hero Section</h3>
+                <p><strong>Kích thước khuyến nghị:</strong> 1920x1080px (hoặc lớn hơn)</p>
+                <p><strong>Mô tả:</strong> Hình nền cho phần đầu trang, nên chọn hình ảnh về tôn giáo, kiến trúc tôn giáo, hoặc cảnh quan trang nghiêm</p>
+                <a href="https://placehold.co/1920x1080/5c4033/ffffff/png?text=Ton+Giao+CNXH&font=raleway" class="download-btn" target="_blank">Tải placeholder</a>
+            </li>
+
+            <li class="image-item">
+                <h3>2.jpg - Hình minh họa chủ nghĩa Mác-Lênin</h3>
+                <p><strong>Kích thước khuyến nghị:</strong> 800x600px</p>
+                <p><strong>Mô tả:</strong> Hình ảnh về chủ nghĩa Mác-Lênin, sách vở, biểu tượng</p>
+                <a href="https://placehold.co/800x600/d4af37/ffffff/png?text=Mac-Lenin&font=raleway" class="download-btn" target="_blank">Tải placeholder</a>
+            </li>
+
+            <li class="image-item">
+                <h3>5.jpg - Hình tròn về Mác-Lênin</h3>
+                <p><strong>Kích thước khuyến nghị:</strong> 800x800px (vuông)</p>
+                <p><strong>Mô tả:</strong> Hình ảnh về tư tưởng Mác-Lênin, triết học</p>
+                <a href="https://placehold.co/800x800/5c4033/ffffff/png?text=Chu+Nghia+Mac-Lenin&font=raleway" class="download-btn" target="_blank">Tải placeholder</a>
+            </li>
+
+            <li class="image-item">
+                <h3>6.jpg - Bản chất của tôn giáo</h3>
+                <p><strong>Kích thước khuyến nghị:</strong> 1000x800px</p>
+                <p><strong>Mô tả:</strong> Hình ảnh về bản chất, triết lý tôn giáo</p>
+                <a href="https://placehold.co/1000x800/d4af37/ffffff/png?text=Ban+Chat+Ton+Giao&font=raleway" class="download-btn" target="_blank">Tải placeholder</a>
+            </li>
+
+            <li class="image-item">
+                <h3>7.jpg - Nguồn gốc và tính chất</h3>
+                <p><strong>Kích thước khuyến nghị:</strong> 1000x800px</p>
+                <p><strong>Mô tả:</strong> Hình ảnh về lịch sử, nguồn gốc tôn giáo</p>
+                <a href="https://placehold.co/1000x800/5c4033/ffffff/png?text=Nguon+Goc+Ton+Giao&font=raleway" class="download-btn" target="_blank">Tải placeholder</a>
+            </li>
+
+            <li class="image-item">
+                <h3>8.jpg - Tôn giáo ở Việt Nam</h3>
+                <p><strong>Kích thước khuyến nghị:</strong> 1000x800px</p>
+                <p><strong>Mô tả:</strong> Hình ảnh về tôn giáo ở Việt Nam, đền chùa, nhà thờ, v.v.</p>
+                <a href="https://placehold.co/1000x800/d4af37/ffffff/png?text=Ton+Giao+Viet+Nam&font=raleway" class="download-btn" target="_blank">Tải placeholder</a>
+            </li>
+
+            <li class="image-item">
+                <h3>13.jpg - Chính sách của Đảng</h3>
+                <p><strong>Kích thước khuyến nghị:</strong> 1000x800px</p>
+                <p><strong>Mô tả:</strong> Hình ảnh về chính sách, lãnh đạo, hội nghị</p>
+                <a href="https://placehold.co/1000x800/5c4033/ffffff/png?text=Chinh+Sach+Dang&font=raleway" class="download-btn" target="_blank">Tải placeholder</a>
+            </li>
+        </ul>
+
+        <div class="suggestion">
+            <h3>💡 Gợi ý nguồn hình ảnh miễn phí:</h3>
+            <ul>
+                <li><strong>Unsplash:</strong> <a href="https://unsplash.com" target="_blank">https://unsplash.com</a> - Hình ảnh chất lượng cao, miễn phí</li>
+                <li><strong>Pexels:</strong> <a href="https://www.pexels.com" target="_blank">https://www.pexels.com</a> - Hình ảnh và video miễn phí</li>
+                <li><strong>Pixabay:</strong> <a href="https://pixabay.com" target="_blank">https://pixabay.com</a> - Hơn 2.7 triệu hình ảnh miễn phí</li>
+                <li><strong>Wikimedia Commons:</strong> <a href="https://commons.wikimedia.org" target="_blank">https://commons.wikimedia.org</a> - Hình ảnh lịch sử</li>
+            </ul>
+            
+            <h4>🤖 Hoặc sử dụng AI để tạo hình:</h4>
+            <ul>
+                <li><strong>DALL-E 3:</strong> Tích hợp trong ChatGPT Plus</li>
+                <li><strong>Midjourney:</strong> <a href="https://midjourney.com" target="_blank">https://midjourney.com</a></li>
+                <li><strong>Stable Diffusion:</strong> <a href="https://stablediffusionweb.com" target="_blank">https://stablediffusionweb.com</a></li>
+                <li><strong>Canva AI:</strong> <a href="https://www.canva.com" target="_blank">https://www.canva.com</a></li>
+            </ul>
+        </div>
+
+        <div class="info">
+            <h3>📝 Hướng dẫn sử dụng:</h3>
+            <ol>
+                <li>Tải xuống hoặc tạo các hình ảnh theo danh sách trên</li>
+                <li>Đặt tên chính xác theo tên file (1.jpg, 2.jpg, 5.jpg, 6.jpg, 7.jpg, 8.jpg, 13.jpg)</li>
+                <li>Sao chép tất cả hình ảnh vào thư mục <code>images/</code></li>
+                <li>Mở lại file <code>index.html</code> để xem kết quả</li>
+            </ol>
+        </div>
+
+        <div class="suggestion">
+            <h3>⚡ Tải nhanh placeholder images:</h3>
+            <p>Nếu bạn chỉ muốn test website, click vào các nút "Tải placeholder" ở trên để tải hình ảnh tạm thời.</p>
+            <p><strong>Lưu ý:</strong> Đây chỉ là hình placeholder đơn giản. Để website đẹp hơn, hãy thay thế bằng hình ảnh thật phù hợp với nội dung.</p>
+        </div>
+    </div>
+
+    <script>
+        console.log('Hướng dẫn tạo hình ảnh cho website Tôn giáo trong thời kỳ quá độ');
+        console.log('Cần 7 hình ảnh: 1.jpg, 2.jpg, 5.jpg, 6.jpg, 7.jpg, 8.jpg, 13.jpg');
+    </script>
+</body>
+</html>
